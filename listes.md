@@ -509,3 +509,22 @@ Bien entendu, pour pouvoir utiliser `zip()`, il faut que les listes soient de mÃ
 1. [Argmax](ex4.1)
 2. [Intersection de listes](ex4.2)
 3. [Union de listes](ex4.3)
+
+
+### CORRECTION
+```
+def argmax(l):
+    k, m= 0, l[0]
+    for i,e in enumerate(l[1:]):
+        if e>m:
+            k,m=i, e
+           
+    return k+1,m # k indice du plus grand, m plus grand
+       
+       
+       
+l= [3,8,12,4,15,-1]
+k0,m0= argmax(l)
+print("PG ",m0, "----->", k0)
+argmax(l)
+```
