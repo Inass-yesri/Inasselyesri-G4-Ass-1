@@ -344,7 +344,16 @@ print(sorted(liste))
 :name: ex4.2
 Écrivez une fonction qui prenne deux listes en entrée et retourne l'intersection des deux listes (c'est-à-dire une liste contenant tous les éléments présents dans les deux listes).
 ```
-
+### CORRECTION
+```
+def argmax(l):
+    k, m= 0, l[0]
+    for i,e in enumerate(l[1:]):
+        if e>m:
+            k,m=i, e
+           
+    return k+1,m # k indice du plus grand, m plus grand
+```       
 <div id="pad_4.2" class="pad"></div>
 <script>
     Pythonpad('pad_4.2', 
@@ -511,16 +520,7 @@ Bien entendu, pour pouvoir utiliser `zip()`, il faut que les listes soient de m�
 3. [Union de listes](ex4.3)
 
 
-### CORRECTION
-```
-def argmax(l):
-    k, m= 0, l[0]
-    for i,e in enumerate(l[1:]):
-        if e>m:
-            k,m=i, e
-           
-    return k+1,m # k indice du plus grand, m plus grand
-       
+
        
        
 l= [3,8,12,4,15,-1]
