@@ -360,7 +360,7 @@ print(sorted(liste))
 def intersection(l1,l2):
     l3=[]
     for e in l1:
-        if e in l2 and e not l3:
+        if e in l2 and e not in l3:
             l3.append(e)
     return l3
 
