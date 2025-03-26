@@ -1,1 +1,61 @@
+# verifier des dates correction liste date
+from datetime import datetime
 
+
+def verifie_date(L):
+  for i in range(len(L)-1):
+    # Convert the date string to a datetime object
+    # Assuming the date format is MM-DD-YYYY
+    date_object1 = datetime.strptime(L[i], "%m-%d-%Y").date()
+    date_object2 = datetime.strptime(L[i+1], "%m-%d-%Y").date()
+    if date_object1 > date_object2:
+      return False
+    else:
+      return True
+
+#correction exercice 1 =liste "nombre"
+def verifier(L):
+  for i in range(len(L)-1):
+    if L[i]> L[i+1]:
+      return False
+    return True  
+
+verifier([0, 5, 8, 8, 9])      
+
+#correction exercice 2
+Urne = ['A', 'A', 'A', 'B', 'C', 'B', 'C', 'B', 'C', 'B']
+print(Urne.count('A'))
+def depuille(L):
+  d=dict()
+  for e in L:
+    if e not in d:
+      d[e]=Urne.count(e)
+  return d
+depuille(Urne)
+
+#exercice 2
+coeur = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],  
+[0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0],  
+[0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0],  
+[0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0],  
+[0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0],  
+[0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0],  
+[0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],  
+[0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0],  
+[0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0],  
+[0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0],  
+[0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0],  
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]] 
+def affiche(dessin): 
+
+ ''' affichage d'une grille : les 1 sont représentés par  
+ des " *" , les 0 par deux espaces "  ". 
+ La valeur "" donnée au paramètre end permet de ne pas avoir    
+ de saut de ligne.''' 
+ for ligne in dessin: 
+  for col in ligne: 
+   if col == 1: 
+    print(" *", end= "") 
+  else: 
+   print("  ", end= "") 
+  print() 
