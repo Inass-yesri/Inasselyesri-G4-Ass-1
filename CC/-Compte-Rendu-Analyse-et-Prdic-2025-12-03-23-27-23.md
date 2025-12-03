@@ -52,10 +52,10 @@ Le dataset étudié contient des informations cliniques sur des patients permett
 
 Dans le notebook, le jeu de données est chargé via :
 
-## ```python
-
+## python
+```
 data = pd.read_csv('/kaggle/input/heart-disease/heart.csv')
-
+```
 ## 🟧 2. Comment ? (Méthodologie utilisée)
 
 ## Ton notebook suit 5 grandes étapes :
